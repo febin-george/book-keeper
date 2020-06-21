@@ -1,0 +1,9 @@
+<h1> Index </h1>
+<%= link_to('Add a new book', new_book_path) %>
+<br>
+<% @books.each do |book| %>
+  <%= link_to(book.title, book_path(book)) %>
+  <%= link_to('Edit', edit_book_path(book)) %>
+  <%= link_to('Delete', book_path(book), method: :delete) %>
+  <br>
+<% end %>
